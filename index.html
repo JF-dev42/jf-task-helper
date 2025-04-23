@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>JF Test Helper</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        textarea {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Generador de respuestas con flow</h2>
+    <form method="post">
+        <label for="idioma">¿En qué idioma está la tarea? (español/inglés):</label><br>
+        <input type="text" id="idioma" name="idioma"><br><br>
+
+        <label for="texto">Pega acá tu pregunta, texto o lo que sea:</label><br>
+        <textarea id="texto" name="texto" rows="6"></textarea><br><br>
+
+        <button type="submit">Generar respuesta</button>
+    </form>
+
+    {% if respuesta %}
+        <hr>
+        <h3>Respuesta generada:</h3>
+        <p>{{ respuesta }}</p>
+    {% endif %}
+</body>
+</html>
